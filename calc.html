@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height:100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+        .calculator{
+           width: 350px;
+           height: auto;
+           background-color:rgb(82, 80, 80);
+           border: 5px solid blue;
+           border-radius: 10px;
+        }
+        input{
+            margin: 0px 10px;
+            padding: 25px;
+            width: 100%;
+            color: black;
+            font-size: 30px;
+            border: 2px solid blue;
+            font-weight: 900;
+            background-color: white;
+            border-radius: 8px;
+        }
+        .intp{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            height:70px ;
+            width: 60px;
+            margin-top: 10px;
+            color: blue;
+            font-size: 25px;
+            background-color: burlywood;
+            margin-left:20px;   
+            border-radius: 8px;
+        }
+        .buttons{
+            margin-top: 10px;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text p{
+            color: purple;
+        }
+        .equal{
+            width: 143px;
+            height: 70px;
+            /* font-size: 30px; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+         <p>Rahul Maurya</p>
+            <div class="intp">
+            <input type="text" name="" id="display" class="display">
+        </div>
+        <div class="buttons">
+            <button onclick="allclear()"> AC</button>
+            <button onclick="appendTodisplay('1')">1</button>
+            <button onclick="appendTodisplay(2)">2</button>
+            <button onclick="appendTodisplay(3)">3</button>
+        </div>
+        <div class="buttons">
+            <button onclick="deleteone()">DEL</button>
+            <button onclick="appendTodisplay(4)">4</button>
+            <button onclick="appendTodisplay(5)">5</button>
+            <button onclick="appendTodisplay(6)">6</button>
+        </div>
+        <div class="buttons">
+           <button onclick="appendTodisplay(7)">7</button>
+           <button onclick="appendTodisplay(8)">8</button>
+           <button onclick="appendTodisplay(9)">9</button>
+           <button onclick="appendTodisplay(0)">0</button>
+        </div>
+        <div class="buttons">
+            <button onclick="appendTodisplay('+')">+</button>
+            <button onclick="appendTodisplay('-')">-</button>
+            <button onclick="appendTodisplay('*')">*</button>
+            <button onclick="appendTodisplay('/')">/</button>
+        </div>
+        <div class="buttons">
+            <button onclick="appendTodisplay('00')">00</button>
+            <button onclick="appendTodisplay('.')">.</button>
+            <button class="equal" onclick="solven()">=</button>
+        </div>
+        <div class="text">
+            <p>This calculator is designed by Rahul Maurya</p>
+        </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function appendTodisplay(value){
+            document.getElementById("display").value += value;
+        }
+        function allclear(){
+            document.getElementById("display").value = " "
+        }
+        function deleteone(){
+            document.getElementById("display").value = document.getElementById("display").value.slice(0,-1)
+        }
+        function solven(){
+            document.getElementById("display").value = eval(document.getElementById("display").value)
+        }
+    </script>
+</body>
+</html>
